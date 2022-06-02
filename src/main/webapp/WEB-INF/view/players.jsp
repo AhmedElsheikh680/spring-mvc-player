@@ -40,6 +40,7 @@
    
   </tbody>
 </table>
+<a href="${pageContext.request.contextPath}/fifa/add-player">Add</a>
 	</div>
 	
 </body>

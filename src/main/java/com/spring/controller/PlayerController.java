@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.spring.model.Player;
@@ -22,16 +24,24 @@ public class PlayerController {
 //	@GetMapping({"/players", "/"})
 	@GetMapping("/players")
 	public String getPlayers(Model model) {
+		
 		List<Player> players = playerService.getPlayers();
 		model.addAttribute("players", players);
 		return "players";
 	}
 	
 	@GetMapping("/add-player")
-	public String addPlayer() {
+	public String addPlayer(Model model) {
+		model.addAttribute("player", new Player());
 		return "add-player";
 	}
 	
+	
+	@PostMapping("/save-player")
+	public String savePlayer(@ModelAttribute("player") Player player) {
+		playerService.addPlayer(player);
+		return "redirect:/fifa/players";
+	}
 	
 	
 	
