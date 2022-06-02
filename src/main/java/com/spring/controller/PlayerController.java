@@ -26,5 +26,36 @@ public class PlayerController {
 		model.addAttribute("players", players);
 		return "players";
 	}
+	
+	@GetMapping("/add-player")
+	public String addPlayer() {
+		return "add-player";
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 }
