@@ -35,7 +35,11 @@
       	<c:param name="playerId" value="${player.id }"></c:param>
       </c:url>
       	<a href="${pageContext.request.contextPath}/fifa/edit-player?playerId=${player.id }" type="button" class="btn btn-success">Edit</a>
-      	<a type="button" class="btn btn-danger">Delete</a>
+      	
+      	<c:url var="deletePlayer" value="${pageContext.request.contextPath}/fifa/delete-player">
+      		<c:param name="playerId" value="${player.id}"></c:param>
+      	</c:url>
+      	<a href="${pageContext.request.contextPath}/fifa/delete-player?playerId=${player.id}" type="button" class="btn btn-danger">Delete</a>
       </td>
     </tr>
   </c:forEach>
