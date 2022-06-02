@@ -19,6 +19,7 @@ public class PlayerController {
 	private PlayerService playerService;
 	
 	// http://localhost:8085/spring-mvc-player/fifa/players
+//	@GetMapping({"/players", "/"})
 	@GetMapping("/players")
 	public String getPlayers(Model model) {
 		List<Player> players = playerService.getPlayers();

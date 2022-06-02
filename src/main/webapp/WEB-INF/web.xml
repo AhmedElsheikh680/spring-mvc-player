@@ -7,6 +7,9 @@
 	<display-name>spring-mvc-player</display-name>
 
 	<absolute-ordering />
+	<welcome-file-list>
+		<welcome-file>home.jsp</welcome-file>
+	</welcome-file-list>
 
 	<!-- Spring MVC Configs -->
 
