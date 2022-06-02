@@ -13,6 +13,7 @@
 	<div class="container">
 	<form:form modelAttribute="player" method="post" action="save-player">
   <div class="form-row">
+  <form:hidden path="id"/>
     <div class="form-group col-md-6">
       <label>Name</label>
       <form:input path="name" placeholder="Name" class="form-control" />

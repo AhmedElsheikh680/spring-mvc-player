@@ -31,8 +31,11 @@
       <td>${player.address }</td>
       <td>${player.phone }</td>
       <td>
-      	<button type="button" class="btn btn-primary">Add</button>
-      	<button type="button" class="btn btn-danger">Delete</button>
+      <c:url var="editPlayer" value="${pageContext.request.contextPath}/fifa/edit-player">
+      	<c:param name="playerId" value="${player.id }"></c:param>
+      </c:url>
+      	<a href="${pageContext.request.contextPath}/fifa/edit-player?playerId=${player.id }" type="button" class="btn btn-success">Edit</a>
+      	<a type="button" class="btn btn-danger">Delete</a>
       </td>
     </tr>
   </c:forEach>
@@ -40,7 +43,7 @@
    
   </tbody>
 </table>
-<a href="${pageContext.request.contextPath}/fifa/add-player">Add</a>
+<a type="button" class="btn btn-primary" href="${pageContext.request.contextPath}/fifa/add-player">Add</a>
 	</div>
 	
 </body>

@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.spring.model.Player;
 import com.spring.service.PlayerService;
@@ -41,6 +42,13 @@ public class PlayerController {
 	public String savePlayer(@ModelAttribute("player") Player player) {
 		playerService.addPlayer(player);
 		return "redirect:/fifa/players";
+	}
+	
+	@GetMapping("/edit-player")
+	public String editPlayer(@RequestParam("playerId") int id, Model model) {
+		Player p = playerService.showPlayer(id);
+		model.addAttribute("player", p);
+		return "add-player";
 	}
 	
 	
